@@ -4,10 +4,13 @@ curl "http://localhost:4741/recipes" \
   --include \
   --request POST \
   --header "Content-Type: application/json" \
+  --header "Authorization: Token token=${TOKEN}" \
   --data '{
-    "ingredient": {
+    "recipe": {
       "name": "'"${NAME}"'",
-      "unit": "'"${UNIT}"'"
+      "description": "'"${DESCRIPTION}"'",
+      "ingredients": "'"${INGREDIENTS}"'",
+      "instructions": "'"${INSTRUCTIONS}"'"
     }
   }'
 
